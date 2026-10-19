@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Gaya College, Gaya</title>
+    <meta name="description"
+        content="Learn about the rich history, mission, and vision of Gaya College, Gaya. Established in 1944.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-header {
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('gaya_campus.png') no-repeat center center/cover;
+            color: white;
+            padding: 100px 0 60px;
+            text-align: center;
+        }
+
+        .breadcrumb {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .breadcrumb a {
+            color: white;
+        }
+
+        .breadcrumb span {
+            margin: 0 5px;
+        }
+
+        .history-timeline {
+            position: relative;
+            padding-left: 30px;
+            border-left: 2px solid #e2e8f0;
+            margin: 30px 0;
+        }
+
+        .timeline-item {
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -36px;
+            top: 5px;
+            width: 14px;
+            height: 14px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+
+        .admin-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .admin-flex {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px !important;
+            }
+
+            .admin-flex img,
+            .admin-flex .placeholder-img {
+                margin: 0 auto 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Gaya College Logo"
+                    style="height: 40px; margin-right: 10px; vertical-align: middle;">
+                Gaya College,<span>Gaya</span>
+            </a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link active"
+                        style="color: var(--secondary-color);">About Us</a></li>
+                <li class="nav-item"><a href="index.html#academics" class="nav-link">Academics</a></li>
+                <li class="nav-item"><a href="index.html#students" class="nav-link">Students</a></li>
+                <li class="nav-item"><a href="index.html#exams" class="nav-link">Exams</a></li>
+                <li class="nav-item"><a href="index.html#hostel" class="nav-link">Facilities</a></li>
+                <li class="nav-item"><a href="index.html#admissions" class="nav-link">Admissions</a></li>
+                <li class="nav-item"><a href="index.html#contact" class="nav-link contact-btn">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="section-title" style="color: white; margin-bottom: 5px;">About Our College</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> <span>/</span> About Us
+            </div>
+        </div>
+    </header>
+
+    <!-- History & Introduction -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="grid-2">
+                <div>
+                    <h4 class="section-label">Our Heritage</h4>
+                    <h2 class="section-title">A Legacy of Academic Excellence</h2>
+                    <p class="lead" style="font-size: 1.1rem; color: var(--text-color); margin-bottom: 20px;">
+                        Gaya College, Gaya, established in <strong>8th February 1944</strong>, is a premier institution
+                        imparting holistic education to students from diverse backgrounds.
+                    </p>
+                    <p style="margin-bottom: 15px;">
+                        It was born out of the vision of eminent personalities and educationists of the region who felt
+                        the
+                        dire need for a center of higher learning in Magadh. Initially affiliated to Patna University,
+                        it
+                        became a constituent unit of <strong>Magadh University, Bodh-Gaya</strong> in 1962.
+                    </p>
+                    <p>
+                        Sprawling over a lush green campus of 57 acres, the college has grown into a multi-faculty
+                        co-educational institution offering courses in Arts, Science, Commerce, Management, and Computer
+                        Applications.
+                        The college is accredited with a <strong>'B' Grade by NAAC</strong>.
+                    </p>
+                </div>
+                <div>
+                    <img src="gaya_campus.png" alt="University Building"
+                        style="width: 100%; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="section-padding secondary-bg">
+        <div class="container">
+            <div class="grid-2">
+                <div class="card"
+                    style="background: white; padding: 40px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                    <div class="icon-box" style="color: var(--secondary-color); font-size: 2rem; margin-bottom: 15px;">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <h3 style="color: var(--primary-color); margin-bottom: 15px; font-family: var(--font-heading);">Our
+                        Mission</h3>
+                    <p>To provide quality higher education to the youth of this region, particularly those belonging to
+                        the underprivileged sections of society, and to empower them with knowledge, skills, and values
+                        to face the challenges of the modern world.</p>
+                </div>
+                <div class="card"
+                    style="background: white; padding: 40px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                    <div class="icon-box" style="color: var(--secondary-color); font-size: 2rem; margin-bottom: 15px;">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                    <h3 style="color: var(--primary-color); margin-bottom: 15px; font-family: var(--font-heading);">Our
+                        Vision</h3>
+                    <p>To emerge as a center of excellence in higher education, fostering research, innovation, and
+                        holistic development of students, thereby contributing to nation-building and social
+                        transformation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Administration -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+                <h4 class="section-label">Governance</h4>
+                <h2 class="section-title">College Administration</h2>
+            </div>
+
+            <div class="grid-2">
+                <div class="admin-flex"
+                    style="background: #fff7ed; padding: 30px; border-radius: 10px; display: flex; align-items: center; gap: 20px;">
+                    <div style="width: 120px; height: 120px; background: #ddd; border-radius: 50%; overflow: hidden;">
+                        <img src="https://via.placeholder.com/150?text=Principal" alt="Principal"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div>
+                        <h3 style="color: var(--primary-color); margin-bottom: 5px;">Dr. Deepak Kumar</h3>
+                        <p style="color: var(--secondary-color); font-weight: 600; margin-bottom: 10px;">Principal</p>
+                        <p style="font-size: 0.9rem; font-style: italic;">"Education is the most powerful weapon which
+                            you can use to change the world."</p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="admin-card admin-flex" style="display: flex; align-items: center; gap: 15px;">
+                        <div class="placeholder-img"
+                            style="width: 80px; height: 80px; border-radius: 50%; background: #f1f5f9; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i class="fa-solid fa-user-tie"
+                                style="font-size: 2.2rem; color: var(--secondary-color);"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin: 0; color: var(--primary-color);">Prof. (Dr.) Amit Kumar</h4>
+                            <span style="font-size: 0.9rem; color: var(--gray);">HOD, Computer Applications (MCA)</span>
+                        </div>
+                    </div>
+                    <div class="admin-card">
+                        <h4 style="margin: 0; color: var(--primary-color);">Dr. K. A. Narayan</h4>
+                        <span style="font-size: 0.9rem; color: var(--gray);">HOD, Management (MBA)</span>
+                    </div>
+                    <div class="admin-card">
+                        <h4 style="margin: 0; color: var(--primary-color);">Dr. Vinay Shankar</h4>
+                        <span style="font-size: 0.9rem; color: var(--gray);">Proctor</span>
+                    </div>
+                    <div class="admin-card">
+                        <h4 style="margin: 0; color: var(--primary-color);">Mr. Ravi Singh</h4>
+                        <span style="font-size: 0.9rem; color: var(--gray);">Bursar</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Detailed -->
+    <section class="section-padding secondary-bg">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 40px;">Campus Facilities</h2>
+            <div class="grid-3">
+                <div class="feature-card">
+                    <i class="fa-solid fa-book-open"
+                        style="font-size: 2rem; color: var(--secondary-color); margin-bottom: 15px;"></i>
+                    <h4>Central Library</h4>
+                    <p style="font-size: 0.9rem;">A rich collection of over 1,00,000 books, journals, and digital
+                        resources with a spacious reading room.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-desktop"
+                        style="font-size: 2rem; color: var(--secondary-color); margin-bottom: 15px;"></i>
+                    <h4>Computer Labs</h4>
+                    <p style="font-size: 0.9rem;">Modern computer labs with high-speed internet for BCA, MCA, and MBA
+                        students.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-flask"
+                        style="font-size: 2rem; color: var(--secondary-color); margin-bottom: 15px;"></i>
+                    <h4>Science Labs</h4>
+                    <p style="font-size: 0.9rem;">Well-equipped Physics, Chemistry, Botany, and Zoology laboratories for
+                        practical learning.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-bed"
+                        style="font-size: 2rem; color: var(--secondary-color); margin-bottom: 15px;"></i>
+                    <h4>Hostels</h4>
+                    <p style="font-size: 0.9rem;">Separate hostel facilities for boys and girls with mess, security, and
+                        recreational areas.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-futbol"
+                        style="font-size: 2rem; color: var(--secondary-color); margin-bottom: 15px;"></i>
+                    <h4>Sports Complex</h4>
+                    <p style="font-size: 0.9rem;">Large playground for Football, Cricket, and courts for Basketball,
+                        Volleyball, and Badminton.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-building-columns"
+                        style="font-size: 2rem; color: var(--secondary-color); margin-bottom: 15px;"></i>
+                    <h4>Auditorium</h4>
+                    <p style="font-size: 0.9rem;">A state-of-the-art seminar hall and auditorium for cultural events and
+                        conferences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="footer-logo">Gaya College,<span>Gaya</span></a>
+                    <p style="margin-bottom: 15px;">Nurturing minds, building character, and inspiring futures since
+                        1944. A constituent unit of Magadh University.</p>
+                    <div class="social-links" style="margin-top: 20px;">
+                        <a href="#" style="color: white; margin-right: 15px;"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" style="color: white; margin-right: 15px;"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" style="color: white; margin-right: 15px;"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="index.html#admissions">Admissions</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Information</h4>
+                    <ul>
+                        <li><i class="fa-solid fa-location-dot"></i> Rampur, Gaya, Bihar 823001</li>
+                        <li><i class="fa-solid fa-phone"></i> +91 631 222 2304</li>
+                        <li><i class="fa-solid fa-envelope"></i> principal@gayacollege.ac.in</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Gaya College, Gaya. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Registrations | Gaya College</title>
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: #f1f5f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        h1 {
+            color: #0f172a;
+            margin-top: 0;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        th {
+            background: #f8fafc;
+            color: #64748b;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        tr:hover {
+            background: #fefce8;
+        }
+
+        .badge {
+            background: #dbf4ff;
+            color: #0065d1;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .btn {
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .btn-back {
+            background: #0f172a;
+            color: white;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .btn-clear {
+            background: #ef4444;
+            color: white;
+            border: none;
+        }
+
+        .empty-msg {
+            text-align: center;
+            color: #94a3b8;
+            padding: 40px;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="index.html" class="btn btn-back">&larr; Back to Home</a>
+
+    <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h1>Submitted Applications</h1>
+            <button onclick="clearData()" class="btn btn-clear"><i class="fa-solid fa-trash"></i> Clear All</button>
+        </div>
+
+        <div style="overflow-x: auto;">
+            <table id="regTable">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>App ID</th>
+                        <th>Name</th>
+                        <th>Course</th>
+                        <th>Father's Name</th>
+                        <th>Contact</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- Rows will be added here -->
+                </tbody>
+            </table>
+            <div id="emptyMsg" class="empty-msg" style="display: none;">No applications submitted yet.</div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            loadRegistrations();
+        });
+
+        function loadRegistrations() {
+            const data = JSON.parse(localStorage.getItem('studentRegistrations')) || [];
+            const tbody = document.getElementById('tableBody');
+            const emptyMsg = document.getElementById('emptyMsg');
+
+            tbody.innerHTML = '';
+
+            if (data.length === 0) {
+                emptyMsg.style.display = 'block';
+                document.getElementById('regTable').style.display = 'none';
+                return;
+            }
+
+            document.getElementById('regTable').style.display = 'table';
+            emptyMsg.style.display = 'none';
+
+            data.forEach(student => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${student.appliedDate}</td>
+                    <td><span style="font-family: monospace; color: #64748b;">#${student.id.toString().slice(-6)}</span></td>
+                    <td><strong>${student.firstName} ${student.lastName}</strong><br><small style="color:#64748b">${student.gender} | ${student.category}</small></td>
+                    <td><span class="badge">${student.courseName}</span></td>
+                    <td>${student.fatherName}</td>
+                    <td>${student.phone}<br><small>${student.email}</small></td>
+                    <td><span style="background:#dcfce7; color:#166534; padding:4px 8px; border-radius:4px; font-weight:600; font-size:0.8rem;">Submitted</span></td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function clearData() {
+            if (confirm('Delete all applications?')) {
+                localStorage.removeItem('studentRegistrations');
+                loadRegistrations();
+            }
+        }
+    </script>
+</body>
+
+</html>

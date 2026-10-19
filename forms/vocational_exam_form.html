@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocational Examination Form - Gaya College</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            background: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .page {
+            background: white;
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 20mm;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #000;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .sub-header {
+            font-size: 16px;
+            margin: 5px 0;
+        }
+
+        .form-title {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin: 20px 0;
+            text-decoration: underline;
+        }
+
+        .field-row {
+            display: flex;
+            margin-bottom: 15px;
+        }
+
+        .field {
+            flex: 1;
+            display: flex;
+            align-items: baseline;
+        }
+
+        .label {
+            font-weight: bold;
+            margin-right: 10px;
+            min-width: 120px;
+        }
+
+        .input-line {
+            border-bottom: 1px dotted #000;
+            flex: 1;
+            height: 20px;
+            margin-right: 20px;
+        }
+
+        .photo-box {
+            width: 35mm;
+            height: 45mm;
+            border: 1px solid #000;
+            position: absolute;
+            top: 40mm;
+            right: 25mm;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .declaration {
+            margin-top: 40px;
+            text-align: justify;
+            line-height: 1.5;
+        }
+
+        .signatures {
+            margin-top: 60px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .sig-box {
+            text-align: center;
+            width: 200px;
+            border-top: 1px solid #000;
+            padding-top: 5px;
+        }
+
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+            }
+
+            .page {
+                box-shadow: none;
+                margin: 0;
+                width: 100%;
+            }
+
+            .btn-print {
+                display: none;
+            }
+        }
+
+        .btn-print {
+            display: block;
+            width: 100%;
+            max-width: 200px;
+            margin: 0 auto 20px;
+            padding: 10px;
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="window.print()" class="btn-print">Print Form</button>
+    <div class="page">
+        <div class="header">
+            <div class="logo">GAYA COLLEGE, GAYA</div>
+            <div class="sub-header">(Constituent Unit of Magadh University, Bodh-Gaya)</div>
+            <div class="sub-header">NAAC Accredited Grade 'B'</div>
+        </div>
+
+        <div class="photo-box">
+            Paste Recent<br>Passport Size<br>Photo
+        </div>
+
+        <div class="form-title">Examination Form (Vocational Courses)</div>
+        <p style="text-align: center;">(BCA / MCA / MBA / B.Sc IT / BBA)</p>
+
+        <div class="field-row" style="margin-top: 40px;">
+            <div class="field">
+                <span class="label">Course Name:</span>
+                <div class="input-line"></div>
+            </div>
+            <div class="field">
+                <span class="label">Semester:</span>
+                <div class="input-line"></div>
+            </div>
+        </div>
+
+        <div class="field-row">
+            <div class="field">
+                <span class="label">Student Name:</span>
+                <div class="input-line"></div>
+            </div>
+        </div>
+
+        <div class="field-row">
+            <div class="field">
+                <span class="label">Father's Name:</span>
+                <div class="input-line"></div>
+            </div>
+        </div>
+
+        <div class="field-row">
+            <div class="field">
+                <span class="label">University Reg. No:</span>
+                <div class="input-line"></div>
+            </div>
+            <div class="field">
+                <span class="label">Class Roll No:</span>
+                <div class="input-line"></div>
+            </div>
+        </div>
+
+        <div class="field-row">
+            <div class="field">
+                <span class="label">Mobile No:</span>
+                <div class="input-line"></div>
+            </div>
+            <div class="field">
+                <span class="label">Email ID:</span>
+                <div class="input-line"></div>
+            </div>
+        </div>
+
+        <h4 style="margin-top: 30px; border-bottom: 1px solid #ccc;">Papers Appearing For</h4>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <div class="field"><span class="label">P-1:</span>
+                <div class="input-line"></div>
+            </div>
+            <div class="field"><span class="label">P-2:</span>
+                <div class="input-line"></div>
+            </div>
+            <div class="field"><span class="label">P-3:</span>
+                <div class="input-line"></div>
+            </div>
+            <div class="field"><span class="label">P-4:</span>
+                <div class="input-line"></div>
+            </div>
+            <div class="field"><span class="label">Practical:</span>
+                <div class="input-line"></div>
+            </div>
+            <div class="field"><span class="label">Project:</span>
+                <div class="input-line"></div>
+            </div>
+        </div>
+
+        <div class="declaration">
+            <strong>Declaration:</strong> I hereby declare that I have fulfilled the attendance criteria (75%) and all
+            information provided is correct.
+        </div>
+
+        <div class="signatures">
+            <div class="sig-box">Signature of Student</div>
+            <div class="sig-box">Course Coordinator</div>
+        </div>
+
+        <div class="signatures">
+            <div class="sig-box" style="border:none;"></div>
+            <div class="sig-box">Principal Signature</div>
+        </div>
+
+        <div style="margin-top: 40px; border-top: 2px dashed #000; padding-top: 10px;">
+            <div style="text-align: center; font-weight: bold;">FOR OFFICE USE ONLY</div>
+            <div class="field-row" style="margin-top: 20px;">
+                <div class="field"><span class="label">Receipt No:</span>
+                    <div class="input-line"></div>
+                </div>
+                <div class="field"><span class="label">Date:</span>
+                    <div class="input-line"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

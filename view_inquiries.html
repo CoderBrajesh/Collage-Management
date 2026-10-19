@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submitted Inquiries - Gaya College</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: #f8fafc;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        h1 {
+            color: #0f172a;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        th {
+            background: #f1f5f9;
+            color: #334155;
+            font-weight: 600;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #d97706;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #b45309;
+        }
+
+        .no-data {
+            text-align: center;
+            color: #64748b;
+            padding: 20px;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Admission Inquiries</h1>
+        <div id="data-container">
+            <table id="inquiries-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Course</th>
+                        <th>Message</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    <!-- Data will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+        <p id="no-data-msg" class="no-data" style="display: none;">No inquiries submitted yet.</p>
+
+        <div style="text-align: center;">
+            <a href="index.html" class="btn">Back to Home</a>
+            <button onclick="clearInquiries()" class="btn" style="background: #ef4444; margin-left: 10px;">Clear All
+                Records</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            loadInquiries();
+        });
+
+        function loadInquiries() {
+            const inquiries = JSON.parse(localStorage.getItem('collegeInquiries')) || [];
+            const tbody = document.getElementById('table-body');
+            const table = document.getElementById('inquiries-table');
+            const noData = document.getElementById('no-data-msg');
+
+            tbody.innerHTML = '';
+
+            if (inquiries.length === 0) {
+                table.style.display = 'none';
+                noData.style.display = 'block';
+                return;
+            }
+
+            table.style.display = 'table';
+            noData.style.display = 'none';
+
+            inquiries.forEach(inquiry => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${inquiry.date}</td>
+                    <td><strong>${inquiry.name}</strong></td>
+                    <td>${inquiry.email}</td>
+                    <td>${inquiry.phone}</td>
+                    <td><span style="background: #e0f2fe; color: #0284c7; padding: 2px 6px; border-radius: 4px; font-size: 0.9rem;">${inquiry.course}</span></td>
+                    <td style="max-width: 300px; font-size: 0.9rem;">${inquiry.message}</td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        function clearInquiries() {
+            if (confirm('Are you sure you want to delete all inquiry records?')) {
+                localStorage.removeItem('collegeInquiries');
+                loadInquiries();
+            }
+        }
+    </script>
+</body>
+
+</html>
